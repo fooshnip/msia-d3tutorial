@@ -3,6 +3,11 @@ msia-d3tutorial
 
 working repository of code snippets and group tutorial
 
+files
+===============
+svg.html - contains most recent working code and svg canvas
+test.html - original work messing with css & html (not as adaptable but good learning)
+
 github resource
 ===============
 http://rogerdudler.github.io/git-guide/
