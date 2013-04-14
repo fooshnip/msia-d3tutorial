@@ -11,25 +11,26 @@
         var h = 300;
         var w = 400;
         var padding = 60;
-        var dataset = [ 5, 10, 15, 20, 25 ];
-        var svg = d3.select("body").append("svg")
-                    .attr("width",w+padding)
-                    .attr("height",h+padding);
-        var circles = svg.selectAll("circle")
-                 .data(dataset)
-                 .enter()
-                 .append("circle");
+        var dataset = [ 5, 10, 15, 20, 25 ];//5 value dataset
+        var svg = d3.select("body").append("svg")//select the body and add a svg element right before the close of the body
+                    .attr("width",w+padding)//set the svg canvas to a width of 360
+                    .attr("height",h+padding);//set the svg canvas to a height of 460
 
-        circles.attr("cx", function(d){
-                    return 100 + d * 2;
+        var circles = svg.selectAll("circle") //set a variable circles - we're going to use previous code svg and select all circles
+                 .data(dataset) //we're going to be dealing with the 5 value dataset
+                 .enter() //enter checks the DOM and sees that there are no circles on the page currently, so it creates 5 empty elements
+                 .append("circle"); //these empty elements are assigned as circle elements
+
+        circles.attr("cx", function(d){//follow back up the code - circles is all code before it + this new chain
+                    return 100 + d * 2;//cx is the x coordinate of the circle
                 })
-                 .attr("cy", function(d){
+                 .attr("cy", function(d){//cy is the y coordinate of the circle
                     return d * 9;
                  })
-                 .attr("r", function(d){
+                 .attr("r", function(d){//r is the radius of the circle in pixels
                     return d;
-                 })       
-                 .on("mouseover",function(d){
+                 });       //THESE inputs will be different for different shapes (rects, lines) but we will do that later.
+                 /*.on("mouseover",function(d){
                     console.log(d);
                     d3.select(this)
                     .transition()
@@ -41,7 +42,18 @@
                     .transition()
                     .duration(200)
                     .attr("fill","black");
-                 });
+                 })*/
+            d3.select("h2") //select my header element "Test Page" and apply some code to it
+                 .on("click",function(d){ //we're going to give it a click interaction - below is the effect of clicking on the h2 text
+                    d3.selectAll("circle") //select all my circles to apply the below on
+                      .transition() //transition engage
+                      .duration(1400) //adjusts how long the transition will last - in ms - move faster or slower and experiment
+                      .ease("backs") //try out elastic, bounce, linear, circle, back, cubic, quad
+                      .attr("cx",function(d){ //transition is only going to adjust the x coordinate - can do y or radius or anything else
+                    return Math.random()*130+200; //creates random floating point between 0 and 1 before multiplication 
+                    })
+                      .attr("fill","green"); //we'll also do a color transition to green
+                });
         </script>
     </body>
 </html>   
