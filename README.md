@@ -9,7 +9,12 @@ http://rogerdudler.github.io/git-guide/
 
 d3 references
 ===============
+d3 cheat sheet
+http://www.jeromecukier.net/wp-content/uploads/2012/10/d3-cheat-sheet.pdf
+
+tutorial we're running through
 http://alignedleft.com/tutorials/d3/
+expanded discussion of everything
 http://ofps.oreilly.com/titles/9781449339739/_technology_fundamentals.html
 
 html5 references
