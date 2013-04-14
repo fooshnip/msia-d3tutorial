@@ -48,12 +48,14 @@
                     d3.selectAll("circle") //select all my circles to apply the below on
                       .transition() //transition engage
                       .duration(1400) //adjusts how long the transition will last - in ms - move faster or slower and experiment
-                      .ease("backs") //try out elastic, bounce, linear, circle, back, cubic, quad
+                      .ease("elastic") //try out elastic, bounce, linear, circle, back, cubic, quad
                       .attr("cx",function(d){ //transition is only going to adjust the x coordinate - can do y or radius or anything else
-                    return Math.random()*130+200; //creates random floating point between 0 and 1 before multiplication 
-                    })
-                      .attr("fill","green"); //we'll also do a color transition to green
-                });
+                        return Math.random()*130+200; //creates random floating point between 0 and 1 before multiplication 
+                        })
+                      .attr("fill",function(d){
+                        return "rgb("+Math.random()*255+","+Math.random()*255+","+Math.random()*255+")"; //random colors!
+                        });
+             });
         </script>
     </body>
 </html>   
