@@ -5,8 +5,8 @@ working repository of code snippets and group tutorial
 
 files
 ---------------
-svg.html - contains most recent working code and svg canvas
-test.html - original work messing with css & html (not as adaptable but good learning)
+1. svg.html - contains most recent working code and svg canvas
+2. test.html - original work messing with css & html (not as adaptable but good learning)
 
 github resource
 ---------------
